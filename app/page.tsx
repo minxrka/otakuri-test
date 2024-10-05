@@ -8,7 +8,7 @@ export default function Home() {
         Сновви1
       </Button>
       <Button className="w-32" variant="destructive">
-        Сновви
+        Сноввиasdasdasd
       </Button>
       <Button className="w-32" variant="outline">
         Сновви
