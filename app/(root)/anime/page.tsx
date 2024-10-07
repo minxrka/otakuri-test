@@ -9,8 +9,8 @@ export default function AnimePage() {
 
 	return (
 		<>
-			<div className='flex flex-col gap-5 mb-6'>
-				<div className='flex items-center justify-between mt-28 max-sm:mt-36 text-2xl'>
+			<div className='flex flex-col gap-8 mb-6'>
+				<div className='flex items-center justify-between mt-28 max-sm:mt-36 text-clamp-2xl'>
 					{activeSorting === 'grip' ? (
 						<div className='flex items-center gap-2 select-none'>
 							<h1 className='font-bold text-titanium-200'>
@@ -58,7 +58,7 @@ export default function AnimePage() {
 					для нас обществе, что развивается странным...'
 						genres='Сёнэн, Приключения'
 						imageUrl='https://staticg.sportskeeda.com/editor/2021/09/f9e1a-16318345240877.png'
-						imageUrlList='https://animego.org/upload/anime/images/5a3fbef2671f5.jpg'
+						imageUrlList='https://nyaa.shikimori.one/uploads/poster/animes/20/16c8836b613b3131abd017c8be84b23c.jpeg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -69,7 +69,7 @@ export default function AnimePage() {
 						description='События происходят на территории Японии, где проживает Ичиго Куросаки. Парень с ранних лет отличается от сверстников, ведь он умеет общаться с призраками. Однажды к нему в комнату залетает барышня, которую зовут Рукия...'
 						genres='Сёнэн, Фэнтези'
 						imageUrl='https://i.ytimg.com/vi/ViqhW50jnMQ/maxresdefault.jpg'
-						imageUrlList='https://animego.org/upload/anime/images/5a510464ccfae.jpg'
+						imageUrlList='https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -128,7 +128,7 @@ export default function AnimePage() {
 					для нас обществе, что развивается странным...'
 						genres='Сёнэн, Приключения'
 						imageUrl='https://staticg.sportskeeda.com/editor/2021/09/f9e1a-16318345240877.png'
-						imageUrlList='https://animego.org/upload/anime/images/5a3fbef2671f5.jpg'
+						imageUrlList='https://nyaa.shikimori.one/uploads/poster/animes/20/16c8836b613b3131abd017c8be84b23c.jpeg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -139,7 +139,7 @@ export default function AnimePage() {
 						description='События происходят на территории Японии, где проживает Ичиго Куросаки. Парень с ранних лет отличается от сверстников, ведь он умеет общаться с призраками. Однажды к нему в комнату залетает барышня, которую зовут Рукия...'
 						genres='Сёнэн, Фэнтези'
 						imageUrl='https://i.ytimg.com/vi/ViqhW50jnMQ/maxresdefault.jpg'
-						imageUrlList='https://animego.org/upload/anime/images/5a510464ccfae.jpg'
+						imageUrlList='https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -198,7 +198,7 @@ export default function AnimePage() {
 					для нас обществе, что развивается странным...'
 						genres='Сёнэн, Приключения'
 						imageUrl='https://staticg.sportskeeda.com/editor/2021/09/f9e1a-16318345240877.png'
-						imageUrlList='https://animego.org/upload/anime/images/5a3fbef2671f5.jpg'
+						imageUrlList='https://nyaa.shikimori.one/uploads/poster/animes/20/16c8836b613b3131abd017c8be84b23c.jpeg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -209,7 +209,7 @@ export default function AnimePage() {
 						description='События происходят на территории Японии, где проживает Ичиго Куросаки. Парень с ранних лет отличается от сверстников, ведь он умеет общаться с призраками. Однажды к нему в комнату залетает барышня, которую зовут Рукия...'
 						genres='Сёнэн, Фэнтези'
 						imageUrl='https://i.ytimg.com/vi/ViqhW50jnMQ/maxresdefault.jpg'
-						imageUrlList='https://animego.org/upload/anime/images/5a510464ccfae.jpg'
+						imageUrlList='https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -268,7 +268,7 @@ export default function AnimePage() {
 					для нас обществе, что развивается странным...'
 						genres='Сёнэн, Приключения'
 						imageUrl='https://staticg.sportskeeda.com/editor/2021/09/f9e1a-16318345240877.png'
-						imageUrlList='https://animego.org/upload/anime/images/5a3fbef2671f5.jpg'
+						imageUrlList='https://nyaa.shikimori.one/uploads/poster/animes/20/16c8836b613b3131abd017c8be84b23c.jpeg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -279,7 +279,7 @@ export default function AnimePage() {
 						description='События происходят на территории Японии, где проживает Ичиго Куросаки. Парень с ранних лет отличается от сверстников, ведь он умеет общаться с призраками. Однажды к нему в комнату залетает барышня, которую зовут Рукия...'
 						genres='Сёнэн, Фэнтези'
 						imageUrl='https://i.ytimg.com/vi/ViqhW50jnMQ/maxresdefault.jpg'
-						imageUrlList='https://animego.org/upload/anime/images/5a510464ccfae.jpg'
+						imageUrlList='https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -338,7 +338,7 @@ export default function AnimePage() {
 					для нас обществе, что развивается странным...'
 						genres='Сёнэн, Приключения'
 						imageUrl='https://staticg.sportskeeda.com/editor/2021/09/f9e1a-16318345240877.png'
-						imageUrlList='https://animego.org/upload/anime/images/5a3fbef2671f5.jpg'
+						imageUrlList='https://nyaa.shikimori.one/uploads/poster/animes/20/16c8836b613b3131abd017c8be84b23c.jpeg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -349,7 +349,7 @@ export default function AnimePage() {
 						description='События происходят на территории Японии, где проживает Ичиго Куросаки. Парень с ранних лет отличается от сверстников, ведь он умеет общаться с призраками. Однажды к нему в комнату залетает барышня, которую зовут Рукия...'
 						genres='Сёнэн, Фэнтези'
 						imageUrl='https://i.ytimg.com/vi/ViqhW50jnMQ/maxresdefault.jpg'
-						imageUrlList='https://animego.org/upload/anime/images/5a510464ccfae.jpg'
+						imageUrlList='https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -408,7 +408,7 @@ export default function AnimePage() {
 					для нас обществе, что развивается странным...'
 						genres='Сёнэн, Приключения'
 						imageUrl='https://staticg.sportskeeda.com/editor/2021/09/f9e1a-16318345240877.png'
-						imageUrlList='https://animego.org/upload/anime/images/5a3fbef2671f5.jpg'
+						imageUrlList='https://nyaa.shikimori.one/uploads/poster/animes/20/16c8836b613b3131abd017c8be84b23c.jpeg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription
@@ -419,7 +419,7 @@ export default function AnimePage() {
 						description='События происходят на территории Японии, где проживает Ичиго Куросаки. Парень с ранних лет отличается от сверстников, ведь он умеет общаться с призраками. Однажды к нему в комнату залетает барышня, которую зовут Рукия...'
 						genres='Сёнэн, Фэнтези'
 						imageUrl='https://i.ytimg.com/vi/ViqhW50jnMQ/maxresdefault.jpg'
-						imageUrlList='https://animego.org/upload/anime/images/5a510464ccfae.jpg'
+						imageUrlList='https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'
 						activeSorting={activeSorting}
 					/>
 					<AnimeCardWithDescription

@@ -8,7 +8,7 @@ export default function WatchPage() {
 
 	return (
 		<>
-			<div className='h-dvh flex flex-col items-center justify-center'>
+			<div className='h-screen flex flex-col items-center justify-center'>
 				<h1 className='px-3 pt-3 text-3xl font-extrabold text-primary-300 hover:text-fuchsia-300 active:text-red-800 cursor-pointer active:translate-x-1 will-change-transform transition-colors-transform duration-300 active:duration-100 select-none'>
 					{id === '0'
 						? 'Наруто'

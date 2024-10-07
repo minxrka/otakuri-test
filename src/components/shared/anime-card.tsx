@@ -29,7 +29,7 @@ export const AnimeCard: React.FC<Props> = ({
 					activeSorting === 'grip' ? 'hover:translate-y-0.5' : null
 				}`}>
 				<img
-					className={`relative object-cover brightness-75 transition-transform will-change-transform select-none ${
+					className={`relative object-cover transition-transform will-change-transform select-none ${
 						activeSorting === 'grip'
 							? 'group-hover:scale-105 aspect-video w-full'
 							: activeSorting === 'grid'
@@ -56,13 +56,17 @@ export const AnimeCard: React.FC<Props> = ({
 						</div>
 					) : (
 						<div className='flex justify-center items-center gap-2'>
-							{activeSorting === 'list' ? <h2
-								className={`text-transparent text-clamp transition-colors font-medium group-hover:text-titanium-100 select-none`}>
-								Подробнее
-							</h2> : null}
-							<MousePointerClick
-								className={`transition-colors text-transparent group-hover:text-titanium-100 select-none ${activeSorting === 'grid' ? 'size-8' : 'size-6'}`}
-							/>
+							{activeSorting === 'list' ? (
+								<>
+									<h2
+										className={`text-transparent text-clamp transition-colors font-medium group-hover:text-titanium-100 select-none`}>
+										Подробнее
+									</h2>
+									<MousePointerClick
+										className={`transition-colors text-transparent group-hover:text-titanium-100 select-none}`}
+									/>
+								</>
+							) : null}
 						</div>
 					)}
 				</div>
