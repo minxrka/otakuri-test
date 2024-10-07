@@ -9,7 +9,7 @@ export default function AnimePage() {
 
 	return (
 		<>
-			<div className='flex flex-col gap-5 mb-6'>
+			<div className='flex flex-col gap-8 mb-6'>
 				<div className='flex items-center justify-between mt-28 max-sm:mt-36 text-clamp-2xl'>
 					{activeSorting === 'grip' ? (
 						<div className='flex items-center gap-2 select-none'>
