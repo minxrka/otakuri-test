@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "text-titanium-200 bg-primary-500/75 hover:bg-primary-hover active:bg-primary-500 duration-500 active:duration-100 active:-translate-y-0.5 border border-transparent hover:border-[#6533ff] active:border-primary-500 shadow-[rgb(0_0_0_/_10%_)_0_0_8px] hover:shadow-[rgb(101_51_255)_0_5px_15px] active:shadow-[rgb(116_89_255)_0_5px_15px] will-change-transform",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "text-titanium-200 bg-primary-500/75 hover:bg-primary-hover hover:scale-[1.02] duration-200 active:scale-[0.98] active:opacity-[0.95] active:outline-none will-change-transform",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
@@ -21,10 +21,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "h-12 px-12 rounded-[25px]",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        icon: "h-12 rounded-full px-[13px]",
       },
     },
     defaultVariants: {
