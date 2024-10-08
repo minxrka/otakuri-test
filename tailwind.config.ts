@@ -4,7 +4,7 @@ const config: Config = {
 	darkMode: ['class'],
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
-		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
@@ -14,6 +14,21 @@ const config: Config = {
 				blueCurve: ['var(--font-blueCurve)'],
 				wiGuru: ['var(--font-wiGuru)'],
 				gothamPro: ['var(--font-gothamPro)'],
+			},
+			fontSize: {
+				'clamp-sm': 'clamp(0.25rem, 3vw, 0.75rem)',
+				clamp: 'clamp(0.375rem, 3vw, 1rem)',
+				'clamp-lg': 'clamp(0.5rem, 3vw, 1.125rem)',
+				'clamp-xl': 'clamp(0.75rem, 3vw, 1.25rem)',
+				'clamp-2xl': 'clamp(1rem, 3vw, 1.5rem)',
+			},
+			screens: {
+				'max-sm': { max: '639px' },
+				'max-md': { max: '767px' },
+				'max-lg': { max: '1023px' },
+				'max-xl': { max: '1279px' },
+				'max-2xl': { max: '1535px' },
+				'max-3xl': { max: '1719px' },
 			},
 			colors: {
 				bodyBg: '#090315',
@@ -84,6 +99,9 @@ const config: Config = {
 					'color, background-color, border-color, transform, box-shadow, filter',
 			},
 		},
+	},
+	future: {
+		hoverOnlyWhenSupported: true,
 	},
 	plugins: [require('tailwindcss-animate')],
 };
