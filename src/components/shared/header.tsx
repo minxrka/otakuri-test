@@ -1,40 +1,39 @@
-import { cn } from '@/src/lib/utils';
-import Link from 'next/link';
-import React from 'react';
-import { Button } from '../ui';
-
+import { cn } from "@/src/lib/utils";
+import Link from "next/link";
+import React from "react";
+import { NextEffectButton } from "../ui/nextEffectButton";
+import { Search } from "lucide-react";
+import Image from "next/image";
+import Logo from "/otakuri.svg";
 interface Props {
-	className?: string;
+  className?: string;
 }
 
 export const Header: React.FC<Props> = ({ className }) => {
-	return (
-		<header
-			className={cn(
-				'absolute flex py-4 gap-3 top-0 max-sm:left-0 max-sm:right-0 max-sm:w-full items-center max-sm:flex-col max-sm:justify-center',
-				className
-			)}>
-			<Link href='/' passHref>
-				<Button
-					className='h-10 max-sm:h-7 px-8 rounded-[25px] bg-primary-500/40'
-					variant='default'>
-					Homepage
-				</Button>
-			</Link>
-			<Link href='/anime' passHref>
-				<Button
-					className='h-10 max-sm:h-7 px-8 rounded-[25px] bg-primary-500/40'
-					variant='default'>
-					Anime Page
-				</Button>
-			</Link>
-			<Link href='/anime/666' passHref>
-				<Button
-					className='h-10 max-sm:h-7 px-8 rounded-[25px] bg-primary-500/40'
-					variant='default'>
-					Watch Page
-				</Button>
-			</Link>
-		</header>
-	);
+  return (
+    <header className={cn("py-4 items-center flex", className)}>
+      <Link href="/" passHref>
+        <Image priority src={Logo} alt="Follow us on Twitter" />
+      </Link>
+      <Link href="/" passHref>
+        <NextEffectButton>Аниме</NextEffectButton>
+      </Link>
+      <Link href="/anime" passHref>
+        <NextEffectButton>Случайное</NextEffectButton>
+      </Link>
+      <Link href="/anime/666" passHref>
+        <NextEffectButton>Лидерборд</NextEffectButton>
+      </Link>
+      <Link href="/anime/666" passHref>
+        <NextEffectButton>Коллекция</NextEffectButton>
+      </Link>
+
+      <NextEffectButton>
+        <Search color="white" className="size-5" />
+      </NextEffectButton>
+      <Link href="/anime/666" passHref>
+        <NextEffectButton>Войти</NextEffectButton>
+      </Link>
+    </header>
+  );
 };
