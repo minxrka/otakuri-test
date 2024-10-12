@@ -1,20 +1,23 @@
-import { cn } from '@/src/lib/utils';
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { cn } from '@/src/lib/utils';
 import { RippleButton } from '../ui/ripple-button';
 import { Search } from 'lucide-react';
-import Image from 'next/image';
-import Logo from '/public/logo.svg';
+import animeData from '/src/data/animeData.json';
+import Logo from '/app/logo.svg';
 
 interface Props {
   className?: string;
 }
 
 export const Header: React.FC<Props> = ({ className }) => {
-  const random = Math.floor(Math.random() * 10);
-
   return (
-    <header className={cn('flex items-center justify-between py-3', className)}>
+    <header
+      className={cn(
+        'flex items-center justify-between py-3 z-20 relative',
+        className
+      )}>
       <nav className='flex items-center gap-8'>
         <Link href='/' passHref>
           <Image priority src={Logo} alt='otakuri logo' />
@@ -23,7 +26,15 @@ export const Header: React.FC<Props> = ({ className }) => {
           <Link href='/anime' passHref>
             <RippleButton variant='header'>Аниме</RippleButton>
           </Link>
-          <Link href={`/anime/${random}`} passHref>
+          <Link
+            href={`/anime/${
+              animeData.list.map((anime) => anime.id)[
+                Math.floor(
+                  Math.random() * animeData.list.map((anime) => anime.id).length
+                )
+              ]
+            }`}
+            passHref>
             <RippleButton variant='header'>Случайное</RippleButton>
           </Link>
           <Link href='/leaderboard' passHref>
