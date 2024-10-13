@@ -25,7 +25,7 @@ export const AnimeCardTest: React.FC<Props> = ({
   return (
     <div className={className}>
       <Link
-        href={`/register/${id}`}
+        href={`/anime/${id}`}
         className={`group relative flex flex-col justify-center items-center overflow-hidden rounded-md active:scale-[.97] transition-transform will-change-transform cursor-pointer ${
           activeViewMode === 'grip' ? 'hover:translate-y-0.5' : null
         }`}>

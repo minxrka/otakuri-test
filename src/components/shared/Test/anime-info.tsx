@@ -1,11 +1,11 @@
 import { cn } from '@/src/lib/utils';
 import React from 'react';
+import Link from 'next/link';
 import { Folder, Heart, Play } from 'lucide-react';
 import { RippleButton } from '../../ui/ripple-button';
-import Link from 'next/link';
 
 interface Props {
-  anime: animesData; //Anime
+  anime: animesData;
   className?: string;
 }
 
@@ -70,7 +70,7 @@ export const AnimeInfoTest: React.FC<Props> = ({ anime, className }) => {
         </h3>
       </section>
       <section className='flex gap-3'>
-        <Link href={`/anime/${anime.id}/1`} passHref>
+        <Link href={`/anime/${anime.id}/watch`} passHref>
           <RippleButton
             size='md'
             startContent={<Play size={18} fill='white' />}

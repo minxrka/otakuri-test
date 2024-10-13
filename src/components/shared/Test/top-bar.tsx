@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Flame, Sparkles } from 'lucide-react';
+import { Flame, Sparkles } from 'lucide-react';
 import { ViewModeGroupButtons } from './view-mode-group-buttons';
 import { SortModeGroupButtons } from './sort-mode-group-buttons';
 

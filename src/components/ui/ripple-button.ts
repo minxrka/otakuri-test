@@ -18,7 +18,7 @@ export const RippleButton = extendVariants(Button, {
       violet: 'bg-[#8b5cf6] text-[#fff]',
     },
     isDisabled: {
-      true: 'bg-[#eaeaea] text-[#000] opacity-50 cursor-not-allowed',
+      true: 'text-titanium-200 bg-primary-700/70 hover:bg-primary-hover outline-none cursor-not-allowed',
     },
     size: {
       '3xs': 'h-5 min-w-5 px-2 rounded-full',

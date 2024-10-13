@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import animeData from '/src/data/animeData.json';
 import { RippleButton } from '@/src/components/ui/ripple-button';
-import Link from 'next/link';
 import { AnimeInfoBgTest } from '@/src/components/shared/Test/anime-info-bg';
 import { AnimeInfoTest } from '@/src/components/shared/Test/anime-info';
 

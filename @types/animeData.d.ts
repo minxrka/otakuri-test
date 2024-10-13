@@ -73,8 +73,8 @@ interface animesData {
         };
         hls: {
           fhd: null | string;
-          hd: string;
-          sd: string;
+          hd: null | string;
+          sd: null | string;
         };
       };
     };
