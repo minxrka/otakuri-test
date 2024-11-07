@@ -1,10 +1,10 @@
 import React from 'react';
 import { Beer } from 'lucide-react';
 
-export default async function Home() {
+export default async function LeaderboardPage() {
   return (
     <>
-      <div className='h-[92vh] flex flex-col justify-center items-center'>
+      <div className='h-[89vh] flex flex-col justify-center items-center'>
         <h1 className='px-2 py-1 text-lg font-medium text-primary-300 hover:text-fuchsia-300 active:text-red-800 cursor-pointer active:translate-x-1 will-change-transform transition-colors-transform duration-300 active:duration-100 select-none'>
           ЛИДЕРЫ ПО УПОТРЕБЛЕНИЮ ПИВА
         </h1>

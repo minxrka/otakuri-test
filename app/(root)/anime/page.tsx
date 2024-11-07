@@ -1,61 +1,109 @@
 'use client';
 
-import { AnimeCardWithDescription, AnimeSort } from '@/src/components/shared';
-import { Clock, Flame, Sparkles } from 'lucide-react';
-import React, { useState } from 'react';
-import animes from '/src/data/animes.json';
+import React, { useEffect, useState, useRef } from 'react';
+import animeData from '/src/data/animeData.json';
+import { AnimeCardWithDescription } from '@/src/components/shared/AnimePage/anime-card-with-description';
+import { TopBar } from '@/src/components/shared/AnimePage/top-bar';
 
-export default function AnimePage() {
-  const [activeSorting, setActiveSorting] = useState('list');
+export default function AnimePageTest() {
+  const [activeSortMode, setActiveSortMode] = useState('hot');
+  const [activeViewMode, setActiveViewMode] = useState('list');
+  const [itemsToShow, setItemsToShow] = useState(10);
+  const [sortedData, setSortedData] = useState(
+    [...animeData.list].sort((a, b) => b.in_favorites - a.in_favorites)
+  );
+  const [listFullyRendered, setListFullyRendered] = useState(false);
+
+  const loadMoreRef = useRef(null);
+
+  const handleLazyLoad = () => {
+    setItemsToShow(itemsToShow + 10);
+  };
+
+  useEffect(() => {
+    if (activeSortMode === 'hot') {
+      setSortedData(
+        [...animeData.list].sort((a, b) => b.in_favorites - a.in_favorites)
+      );
+    } else {
+      setSortedData(animeData.list);
+    }
+  }, [activeSortMode]);
+
+  useEffect(() => {
+    if (activeViewMode === 'grip') {
+      setItemsToShow(12);
+    } else {
+      setItemsToShow(10);
+    }
+  }, [activeViewMode]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && listFullyRendered) {
+          handleLazyLoad();
+        }
+      },
+      {
+        rootMargin: '100px',
+      }
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => {
+      if (loadMoreRef.current) {
+        observer.unobserve(loadMoreRef.current);
+      }
+    };
+  }, [itemsToShow, listFullyRendered]);
+
+  useEffect(() => {
+    setListFullyRendered(true);
+  }, [sortedData]);
 
   return (
     <>
-      <div className='flex flex-col max-w-[1220px] mx-auto gap-8 mb-6 mt-20'>
+      <div className='flex flex-col max-w-[1220px] mx-auto gap-8 mb-6 mt-16'>
         <div className='flex items-center justify-between text-clamp-2xl'>
-          {activeSorting === 'grip' ? (
-            <div className='flex items-center gap-2 select-none'>
-              <h1 className='font-bold text-titanium-200'>Лучшие</h1>
-              <Flame className='size-7 text-orange-400 drop-shadow-[0_1px_7px_rgba(249,115,22,0.95)]' />
-            </div>
-          ) : activeSorting === 'grid' ? (
-            <div className='flex items-center gap-2 select-none'>
-              <h1 className='font-bold text-titanium-200'>Новинки</h1>
-              <Clock className='size-6 text-emerald-500 drop-shadow-[0_1px_7px_rgba(16,185,129,0.95)]' />
-            </div>
-          ) : (
-            <div className='flex items-center gap-2 select-none'>
-              <h1 className='font-bold text-titanium-200'>Список аниме</h1>
-              <Sparkles className='size-6 text-primary-400 drop-shadow-[0_1px_7px_rgba(116,89,255,0.95)]' />
-            </div>
-          )}
-          <AnimeSort
-            activeSorting={activeSorting}
-            setActiveSorting={setActiveSorting}
+          <TopBar
+            activeSortMode={activeSortMode}
+            setActiveSortMode={setActiveSortMode}
+            activeViewMode={activeViewMode}
+            setActiveViewMode={setActiveViewMode}
           />
         </div>
         <div
           className={`flex flex-col justify-center items-center ${
-            activeSorting === 'grip'
-              ? 'grid grid-cols-4 max-md:grid-cols-2 gap-6'
-              : activeSorting === 'grid'
-              ? 'grid grid-cols-2 max-md:grid-cols-1 gap-6'
+            activeViewMode === 'grip'
+              ? 'grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6'
+              : activeViewMode === 'grid'
+              ? 'grid grid-cols-[repeat(auto-fit,minmax(450px,1fr))] lg:grid-cols-2 gap-6'
               : 'gap-9'
           }`}>
-          {[...Array(6)].map(() =>
-            animes.map((anime: Anime) => (
-              <AnimeCardWithDescription
-                key={anime.id}
-                id={anime.id}
-                nameRu={anime.nameRu}
-                name={anime.name}
-                year={anime.year}
-                description={anime.description}
-                genres={anime.genres}
-                imageUrlRoblox={anime.imageUrlRoblox}
-                imageUrl={anime.imageUrl}
-                activeSorting={activeSorting}
-              />
-            ))
+          {sortedData.slice(0, itemsToShow).map((data) => (
+            <AnimeCardWithDescription
+              key={data.id}
+              id={data.id}
+              nameRu={data.names.ru}
+              name={data.names.en}
+              year={data.season.year}
+              description={data.description}
+              genres={data.genres}
+              imageUrlRoblox={
+                data.posters.original.wide === null
+                  ? 'https://anilibria.top' + data.posters.original.url
+                  : data.posters.original.wide
+              }
+              imageUrl={'https://anilibria.top' + data.posters.original.url}
+              activeViewMode={activeViewMode}
+            />
+          ))}
+          {itemsToShow < sortedData.length && (
+            <div ref={loadMoreRef} className='h-px' />
           )}
         </div>
       </div>

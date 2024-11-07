@@ -8,9 +8,11 @@ export const RippleButton = extendVariants(Button, {
     variant: {
       header:
         'text-lg font-light text-titanium-200 hover:bg-primary-500/80 hover:text-titanium-200 will-change-transform outline-none',
-      sort: 'text-lg font-light text-titanium-200 bg-primary-500/20 hover:bg-primary-500/40 hover:text-titanium-200 will-change-transform outline-none',
+      mode: 'text-lg font-light text-titanium-200 bg-primary-500/20 hover:bg-primary-500/40 hover:text-titanium-200 will-change-transform outline-none',
+      sortButton:
+        'text-titanium-200 bg-primary-500/70 shadow-[rgb(0_0_0_/_10%_)_0_0_8px] outline-none will-change-transform',
       default:
-        'text-titanium-200 bg-primary-500/70 hover:bg-primary-hover active:bg-primary-500 active:duration-100 active:-translate-y-0.5 shadow-[rgb(0_0_0_/_10%_)_0_0_8px] hover:shadow-[rgb(101_51_255)_0_5px_15px] active:shadow-[rgb(116_89_255)_0_5px_15px] will-change-transform outline-none',
+        'text-titanium-200 !transition-[background-color,_box-shadow,_color,_background,_transform,_fill,_stroke,_opacity,_text-decoration-color] bg-primary-500/70 hover:bg-primary-hover active:bg-primary-500 active:duration-100 active:-translate-y-0.5 shadow-[rgb(0_0_0_/_10%_)_0_0_8px] hover:shadow-[rgb(101_51_255)_0_5px_15px] active:shadow-[rgb(116_89_255)_0_5px_15px] will-change-transform outline-none',
     },
     color: {
       poka: 'text-lg font-light text-titanium-200 hover:bg-primary-500/30 hover:text-titanium-200 will-change-transform',
@@ -18,13 +20,15 @@ export const RippleButton = extendVariants(Button, {
       violet: 'bg-[#8b5cf6] text-[#fff]',
     },
     isDisabled: {
-      true: 'bg-[#eaeaea] text-[#000] opacity-50 cursor-not-allowed',
+      true: 'text-titanium-200 bg-primary-700/70 hover:bg-primary-hover outline-none cursor-not-allowed opacity-40',
     },
     size: {
-      xxs: 'h-8 min-w-0 px-3 rounded-full',
+      '3xs': 'h-6 min-w-5 px-2 rounded-full',
+      '2xs': 'h-8 min-w-8 px-3 rounded-full',
       xs: 'h-8 px-7 rounded-full',
-      md: 'px-4 min-w-20 h-10 text-small gap-2 rounded-small',
+      md: 'h-10 min-w-10 px-12 rounded-[25px]',
       xl: 'px-8 min-w-28 h-14 text-large gap-4 rounded-medium',
+      icon: 'h-10 min-w-[42px] px-0 rounded-[25px]',
     },
   },
   defaultVariants: {

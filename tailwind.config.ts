@@ -18,11 +18,15 @@ const config: Config = {
         gothamPro: ['var(--font-gothamPro)'],
       },
       fontSize: {
+        'clamp-xs': 'clamp(0.15rem, 3vw, 0.5rem)',
         'clamp-sm': 'clamp(0.25rem, 3vw, 0.75rem)',
         clamp: 'clamp(0.375rem, 3vw, 1rem)',
         'clamp-lg': 'clamp(0.5rem, 3vw, 1.125rem)',
         'clamp-xl': 'clamp(0.75rem, 3vw, 1.25rem)',
         'clamp-2xl': 'clamp(1rem, 3vw, 1.5rem)',
+        'clamp-5xl': 'clamp(1.5rem, 3vw, 3rem)',
+        'clamp-5.5xl': 'clamp(1.75rem, 3.5vw, 3.5rem)',
+        'clamp-6xl': 'clamp(2rem, 3.75vw, 3.75rem)',
       },
       screens: {
         'max-sm': { max: '639px' },
@@ -129,7 +133,7 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            background: '#090315',
+            background: '#0a0a0a',
             foreground: '#F0F0F0',
           },
         },

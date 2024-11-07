@@ -37,7 +37,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-bodyBg text-titanium-100;
+    @apply bg-neutral-950 text-titanium-100;
   }
 }
 
