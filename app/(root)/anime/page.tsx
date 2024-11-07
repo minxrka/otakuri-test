@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import animeData from '/src/data/animeData.json';
-import { AnimeCardWithDescriptionTest } from '@/src/components/shared/Test/anime-card-with-description';
-import { TopBarTest } from '@/src/components/shared/Test/top-bar';
+import { AnimeCardWithDescription } from '@/src/components/shared/AnimePage/anime-card-with-description';
+import { TopBar } from '@/src/components/shared/AnimePage/top-bar';
 
 export default function AnimePageTest() {
   const [activeSortMode, setActiveSortMode] = useState('hot');
@@ -69,7 +69,7 @@ export default function AnimePageTest() {
     <>
       <div className='flex flex-col max-w-[1220px] mx-auto gap-8 mb-6 mt-16'>
         <div className='flex items-center justify-between text-clamp-2xl'>
-          <TopBarTest
+          <TopBar
             activeSortMode={activeSortMode}
             setActiveSortMode={setActiveSortMode}
             activeViewMode={activeViewMode}
@@ -79,13 +79,13 @@ export default function AnimePageTest() {
         <div
           className={`flex flex-col justify-center items-center ${
             activeViewMode === 'grip'
-              ? 'grid grid-cols-4 max-md:grid-cols-2 gap-6'
+              ? 'grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6'
               : activeViewMode === 'grid'
-              ? 'grid grid-cols-2 max-md:grid-cols-1 gap-6'
+              ? 'grid grid-cols-[repeat(auto-fit,minmax(450px,1fr))] lg:grid-cols-2 gap-6'
               : 'gap-9'
           }`}>
           {sortedData.slice(0, itemsToShow).map((data) => (
-            <AnimeCardWithDescriptionTest
+            <AnimeCardWithDescription
               key={data.id}
               id={data.id}
               nameRu={data.names.ru}

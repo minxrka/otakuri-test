@@ -2,7 +2,7 @@ import { Container, Header } from '@/src/components/shared';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Otakuri | Аниме',
+  title: 'Otakuri | Просмотр аниме',
   description: 'Otakuri description',
 };
 

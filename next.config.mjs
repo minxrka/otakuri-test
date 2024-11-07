@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'static.litelibria.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+      },
     ],
   },
 };

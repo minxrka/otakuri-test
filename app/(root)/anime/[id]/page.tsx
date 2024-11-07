@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import animeData from '/src/data/animeData.json';
 import { RippleButton } from '@/src/components/ui/ripple-button';
 import Link from 'next/link';
-import { AnimeInfoBgTest } from '@/src/components/shared/Test/anime-info-bg';
-import { AnimeInfoTest } from '@/src/components/shared/Test/anime-info';
+import { AnimeInfoBg } from '@/src/components/shared/AnimeInfo/anime-info-bg';
+import { AnimeInfo } from '@/src/components/shared/AnimeInfo/anime-info';
 import { useParams } from 'next/navigation';
 
 export default function AnimeInfoPageTest() {
@@ -13,6 +13,12 @@ export default function AnimeInfoPageTest() {
   const AnimeData = animeData.list.find(
     (anime) => anime.id === parseInt(id as string)
   );
+  
+  useEffect(() => {
+    if (AnimeData) {
+      document.title = `${AnimeData.names.ru} | Otakuri`;
+    }
+  }, [AnimeData]);
 
   return (
     <>
@@ -37,9 +43,9 @@ export default function AnimeInfoPageTest() {
           </div>
         ) : (
           <>
-            <AnimeInfoBgTest anime={AnimeData} />
+            <AnimeInfoBg anime={AnimeData} />
             <main className='relative max-w-[820px] h-[88vh] flex flex-col justify-center gap-7'>
-              <AnimeInfoTest anime={AnimeData} />
+              <AnimeInfo anime={AnimeData} />
             </main>
           </>
         )}

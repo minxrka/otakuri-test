@@ -24,19 +24,19 @@ export const AnimeSort: React.FC<Props> = ({
       <ButtonGroup size='lg' className='flex-row-reverse'>
         <RippleButton
           size='2xs'
-          variant={activeSorting === 'list' ? 'default' : 'sort'}
+          variant={activeSorting === 'list' ? 'default' : 'sortButton'}
           onClick={() => handleSortClick('list')}>
           <LayoutList size={20} />
         </RippleButton>
         <RippleButton
           size='2xs'
-          variant={activeSorting === 'grid' ? 'default' : 'sort'}
+          variant={activeSorting === 'grid' ? 'default' : 'sortButton'}
           onClick={() => handleSortClick('grid')}>
           <LayoutGrid size={20} />
         </RippleButton>
         <RippleButton
           size='2xs'
-          variant={activeSorting === 'grip' ? 'default' : 'sort'}
+          variant={activeSorting === 'grip' ? 'default' : 'sortButton'}
           onClick={() => handleSortClick('grip')}>
           <Grip size={20} />
         </RippleButton>

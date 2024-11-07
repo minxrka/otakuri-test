@@ -133,7 +133,7 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            background: '#090315',
+            background: '#0a0a0a',
             foreground: '#F0F0F0',
           },
         },

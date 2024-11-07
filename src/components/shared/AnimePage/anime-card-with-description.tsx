@@ -8,10 +8,10 @@ interface Props {
   nameRu: string;
   year: number;
   description: string;
-  genres: string;
+  genres: string[];
   imageUrlRoblox: string;
   imageUrl: string;
-  activeSorting: string;
+  activeViewMode: string;
 }
 
 export const AnimeCardWithDescription: React.FC<Props> = ({
@@ -23,27 +23,28 @@ export const AnimeCardWithDescription: React.FC<Props> = ({
   genres,
   imageUrl,
   imageUrlRoblox,
-  activeSorting,
+  activeViewMode,
 }) => {
   return (
     <>
-      <div className='w-full flex gap-5'>
+      <div className='w-full h-full flex gap-5'>
         <AnimeCard
           id={id}
-          name={name}
-          genres={genres}
+          nameRu={nameRu}
+          description={description}
           imageUrlRoblox={imageUrlRoblox}
           imageUrl={imageUrl}
-          activeSorting={activeSorting}
+          activeViewMode={activeViewMode}
         />
-        {activeSorting !== 'grip' ? (
+        {activeViewMode !== 'grip' ? (
           <CardDescription
             id={id}
             nameRu={nameRu}
             name={name}
+            genres={genres}
             year={year}
             description={description}
-            activeSorting={activeSorting}
+            activeViewMode={activeViewMode}
           />
         ) : null}
       </div>
