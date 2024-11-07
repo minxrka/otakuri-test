@@ -44,7 +44,7 @@ export default function AnimeInfoPage() {
         ) : (
           <>
             <AnimeInfoBg anime={AnimeData} />
-            <main className='relative max-w-[820px] h-[88vh] flex flex-col justify-center gap-7'>
+            <main className='relative max-w-[820px] h-[88vh] flex flex-col justify-center gap-8'>
               <AnimeInfo anime={AnimeData} />
             </main>
           </>
