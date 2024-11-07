@@ -8,7 +8,7 @@ import { AnimeInfoBg } from '@/src/components/shared/AnimeInfo/anime-info-bg';
 import { AnimeInfo } from '@/src/components/shared/AnimeInfo/anime-info';
 import { useParams } from 'next/navigation';
 
-export default function AnimeInfoPageTest() {
+export default function AnimeInfoPage() {
   const { id } = useParams();
   const AnimeData = animeData.list.find(
     (anime) => anime.id === parseInt(id as string)

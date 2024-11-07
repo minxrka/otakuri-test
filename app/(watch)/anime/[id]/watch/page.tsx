@@ -9,7 +9,7 @@ import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function PlayerPage() {
+export default function WatchPage() {
   const { id } = useParams();
   const videoRef = useRef(null);
   const AnimeData = animeData.list.find(
@@ -185,30 +185,32 @@ export default function PlayerPage() {
           </RippleButton>
         </div>
         <div className='grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] w-full justify-items-center gap-4 px-6'>
-          {sortedEpisodeListKeys && sortedEpisodeListKeys.length > 0 ? sortedEpisodeListKeys.map((index) => (
-            <RippleButton
-              variant='sortButton'
-              onClick={() => handleSetEpisode(Number(index))}
-              isDisabled={Number(index) === episodeNumber}
-              key={index}
-              className='group min-h-28 px-0 aspect-video w-full bg-transparent rounded-xl'>
-              <Image
-                width={100}
-                height={100}
-                alt='episode preview'
-                src={
-                  AnimeData?.player?.list[Number(index)].preview
-                    ? 'https://anilibria.top' +
-                      AnimeData?.player?.list[Number(index)].preview
-                    : 'https://i.pinimg.com/originals/77/81/dd/7781dde14911b9440dc865b94aba0af1.jpg'
-                }
-                className='absolute object-cover w-full h-full brightness-[.6] group-hover:scale-105 group-hover:brightness-[.35] transition-[transform,_filter] duration-300 will-change-transform'
-              />
-              <span className='z-10 text-lg font-bold text-titanium-200 text-center'>
-                {index} серия
-              </span>
-            </RippleButton>
-          )) : (
+          {sortedEpisodeListKeys && sortedEpisodeListKeys.length > 0 ? (
+            sortedEpisodeListKeys.map((index) => (
+              <RippleButton
+                variant='sortButton'
+                onClick={() => handleSetEpisode(Number(index))}
+                isDisabled={Number(index) === episodeNumber}
+                key={index}
+                className='group min-h-28 px-0 aspect-video w-full bg-transparent rounded-xl'>
+                <Image
+                  width={100}
+                  height={100}
+                  alt='episode preview'
+                  src={
+                    AnimeData?.player?.list[Number(index)].preview
+                      ? 'https://anilibria.top' +
+                        AnimeData?.player?.list[Number(index)].preview
+                      : 'https://i.pinimg.com/originals/77/81/dd/7781dde14911b9440dc865b94aba0af1.jpg'
+                  }
+                  className='absolute object-cover w-full h-full brightness-[.6] group-hover:scale-105 group-hover:brightness-[.35] transition-[transform,_filter] duration-300 will-change-transform'
+                />
+                <span className='z-10 text-lg font-bold text-titanium-200 text-center'>
+                  {index} серия
+                </span>
+              </RippleButton>
+            ))
+          ) : (
             <span className='text-4xl text-rose-400 font-extrabold'>
               Нет доступных эпизодов.
             </span>
