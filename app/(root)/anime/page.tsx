@@ -1,33 +1,27 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import animeData from '/src/data/animeData.json';
 import { AnimeCardWithDescription } from '@/src/components/shared/AnimePage/anime-card-with-description';
 import { TopBar } from '@/src/components/shared/AnimePage/top-bar';
 
-export default function AnimePageTest() {
+export default function AnimePage() {
+  const loadMoreRef = useRef(null);
+
   const [activeSortMode, setActiveSortMode] = useState('hot');
   const [activeViewMode, setActiveViewMode] = useState('list');
   const [itemsToShow, setItemsToShow] = useState(10);
-  const [sortedData, setSortedData] = useState(
-    [...animeData.list].sort((a, b) => b.in_favorites - a.in_favorites)
-  );
   const [listFullyRendered, setListFullyRendered] = useState(false);
-
-  const loadMoreRef = useRef(null);
 
   const handleLazyLoad = () => {
     setItemsToShow(itemsToShow + 10);
   };
 
-  useEffect(() => {
-    if (activeSortMode === 'hot') {
-      setSortedData(
-        [...animeData.list].sort((a, b) => b.in_favorites - a.in_favorites)
-      );
-    } else {
-      setSortedData(animeData.list);
-    }
+  const sortedData = useMemo(() => {
+    const data = [...animeData.list];
+    return activeSortMode === 'hot'
+      ? data.sort((a, b) => b.in_favorites - a.in_favorites)
+      : data;
   }, [activeSortMode]);
 
   useEffect(() => {
