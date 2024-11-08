@@ -37,7 +37,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-neutral-950 text-titanium-100;
+    @apply bg-[rgb(17,17,17)] text-titanium-100;
   }
 }
 

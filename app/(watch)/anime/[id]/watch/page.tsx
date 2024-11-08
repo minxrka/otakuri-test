@@ -196,6 +196,7 @@ export default function WatchPage() {
                 <Image
                   width={100}
                   height={100}
+                  loading='lazy'
                   alt='episode preview'
                   src={
                     AnimeData?.player?.list[Number(index)].preview
