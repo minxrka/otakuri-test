@@ -51,16 +51,18 @@ const config: Config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          hover: '#8F88FF',
-          '100': '#e9e8ff',
-          '200': '#d5d4ff',
-          '300': '#b7b1ff',
-          '400': '#9385ff',
-          '500': '#7459ff', //main
-          '600': '#5d30f7',
-          '700': '#4f1ee3',
-          '800': '#4118bf',
-          '900': '#37169c',
+          hover: '#ff5990',
+          '50': '#fff1f5',
+          '100': '#ffe3ea',
+          '200': '#ffccdc',
+          '300': '#ffa1bf',
+          '400': '#ff5990',
+          '500': '#f93a7f', //main
+          '600': '#e7176c',
+          '700': '#c30d5b',
+          '800': '#a30e53',
+          '900': '#8b104d',
+          '950': '#4e0326',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -133,7 +135,7 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            background: '#111111',
+            background: '#0e0e0e',
             foreground: '#F0F0F0',
           },
         },
