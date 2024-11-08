@@ -35,8 +35,8 @@ export const AnimeCard: React.FC<Props> = ({
         <Image
           width={300}
           height={300}
-          src={activeViewMode === 'grip' ? imageUrlRoblox : imageUrl}
           loading='lazy'
+          src={activeViewMode === 'grip' ? imageUrlRoblox : imageUrl}
           alt='anime thumbnail'
           className={`relative h-full aspect-[7/10] object-contain transition-transform will-change-transform select-none ${
             activeViewMode === 'grip'
